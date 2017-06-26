@@ -1,0 +1,61 @@
+FROM registry.access.redhat.com/rhel7-atomic:latest
+RUN microdnf update
+RUN microdnf --enablerepo rhel-7-server-rpms install gzip 
+RUN microdnf --enablerepo rhel-7-server-rpms install zlib.x86_64
+RUN microdnf --enablerepo rhel-7-server-rpms  install bzip2-devel
+RUN microdnf --enablerepo rhel-7-server-rpms  install zip 
+RUN microdnf --enablerepo rhel-7-server-rpms  install postgresql 
+RUN microdnf --enablerepo rhel-7-server-rpms  install postgresql-server
+RUN microdnf --enablerepo rhel-7-server-rpms  install postgresql-libs 
+RUN microdnf --enablerepo rhel-7-server-rpms  install postgresql-contrib 
+RUN microdnf --enablerepo rhel-7-server-rpms  install postgresql-common 
+RUN microdnf --enablerepo rhel-7-server-rpms  install postgresql-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install postgis 
+RUN microdnf --enablerepo rhel-7-server-rpms  install unzip 
+RUN microdnf --enablerepo rhel-7-server-rpms  install librsvg2 
+RUN microdnf --enablerepo rhel-7-server-rpms  install librsvg2-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install gnome-python2-rsvg 
+RUN microdnf --enablerepo rhel-7-server-rpms  install pygobject2 
+RUN microdnf --enablerepo rhel-7-server-rpms  install pygobject2-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install cairo 
+RUN microdnf --enablerepo rhel-7-server-rpms  install cairo-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install cairomm-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install libjpeg-turbo-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install pango
+RUN microdnf --enablerepo rhel-7-server-rpms  install pango-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install pangomm 
+RUN microdnf --enablerepo rhel-7-server-rpms  install pangomm-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install giflib-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install npm 
+RUN microdnf --enablerepo rhel-7-server-rpms  install nodejs 
+RUN microdnf --enablerepo rhel-7-server-rpms  install git
+RUN microdnf --enablerepo rhel-7-server-rpms  install python 
+RUN microdnf --enablerepo rhel-7-server-rpms  install wget 
+RUN microdnf --enablerepo rhel-7-server-rpms  install python-ply 
+RUN microdnf --enablerepo rhel-7-server-rpms  install python-imaging 
+RUN microdnf --enablerepo rhel-7-server-rpms  install pycairo python-cairosvg 
+RUN microdnf --enablerepo rhel-7-server-rpms  install pygtk2 pygtk2-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install make 
+RUN microdnf --enablerepo rhel-7-server-rpms  install cmake 
+RUN microdnf --enablerepo rhel-7-server-rpms  install boost-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install expat-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install geos-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install proj-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install proj-epsg 
+RUN microdnf --enablerepo rhel-7-server-rpms  install lua-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install gcc-c++ 
+RUN microdnf --enablerepo rhel-7-server-rpms  install libjpeg-turbo-devel 
+RUN microdnf --enablerepo rhel-7-server-rpms  install giflib-devel
+RUN microdnf --enablerepo rhel-7-server-rpms install zlib-devel.x86_64 
+
+#Install app dependencies
+#COPY package.json /usr/src/app/
+#RUN npm install
+
+# Bundle app source
+#COPY . /usr/src/app
+
+EXPOSE 8080
+
+#CMD ["ash","./svcpkt2dns.sh"]
+
